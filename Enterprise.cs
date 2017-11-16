@@ -8,54 +8,37 @@ namespace Incapsulation.EnterpriseTask
 {
     public class Enterprise
     {
-        Guid guid;
+        string inn = string.Empty;
 
-        public Guid getGuid() { return guid; }
+        public readonly Guid Guid;
+        public string Name { get; set; }
+        public DateTime EstablishDate { get; set; }
 
-        public Enterprise(Guid guid)
+
+        public string Inn
         {
-            this.guid = guid;
+            get => inn;
+            set
+            {
+                if (value.Length != 10 || !value.All(char.IsDigit))
+                    throw new ArgumentException();
+                inn = value;
+            }
         }
 
-        string name;
+        public TimeSpan ActiveTimeSpan { get => DateTime.Now - EstablishDate; }
 
-        public string getName() { return name; }
 
-        public void setName(string name) { this.name = name; }
-
-        string inn;
-
-        public string getINN() { return inn; }
-
-        public void setINN(string inn)
+        public Enterprise()
         {
-            if (inn.Length != 10 || !inn.All(z => char.IsDigit(z)))
-                throw new ArgumentException();
-            this.inn = inn;
+            Guid = Guid.NewGuid();
         }
 
-        DateTime establishDate;
-
-        public DateTime getEstablishDate()
-        {
-            return establishDate;
-        }
-
-        public void setEstablishDate(DateTime establishDate)
-        {
-            this.establishDate = establishDate;
-        }
-
-        public TimeSpan getActiveTimeSpan()
-        {
-            return DateTime.Now - establishDate;
-        }
-
-        public double getTotalTransactionsAmount()
+        public double GetTotalTransactionsAmount()
         {
             DataBase.OpenConnection();
             var amount = 0.0;
-            foreach (Transaction t in DataBase.Transactions().Where(z => z.EnterpriseGuid == guid))
+            foreach (Transaction t in DataBase.Transactions().Where(z => z.EnterpriseGuid == Guid))
                 amount += t.Amount;
             return amount;
         }

@@ -1,0 +1,8 @@
+C:\MySource\3.3_Predpriyatie\bin\Debug\Incapsulation.Enterprise.dll.config
+C:\MySource\3.3_Predpriyatie\bin\Debug\Incapsulation.Enterprise.dll
+C:\MySource\3.3_Predpriyatie\bin\Debug\Incapsulation.Enterprise.pdb
+C:\MySource\3.3_Predpriyatie\bin\Debug\nunit.framework.dll
+C:\MySource\3.3_Predpriyatie\obj\Debug\Incapsulation.EnterpriseTask.csprojResolveAssemblyReference.cache
+C:\MySource\3.3_Predpriyatie\obj\Debug\Incapsulation.EnterpriseTask.csproj.CoreCompileInputs.cache
+C:\MySource\3.3_Predpriyatie\obj\Debug\Incapsulation.Enterprise.dll
+C:\MySource\3.3_Predpriyatie\obj\Debug\Incapsulation.Enterprise.pdb
